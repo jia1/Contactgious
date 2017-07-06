@@ -1,0 +1,7 @@
+[emeow]
+server = smtp.gmail.com
+port = 465
+sender = example@gmail.com
+password = 123456
+ssl = True
+tls = False

@@ -1,0 +1,19 @@
+<html>
+  <head></head>
+  <body>
+    {% if not (enquiry and name and email and subject and message) %}
+    <h2>Warning: The system has allowed invalid requests to reach you.</h2>
+    {% else %}
+    <h2>An enquiry from {{ name }} &lt;{{ email }}&gt;</h2>
+    <h4>{{ enquiry }}: {{ subject }}</h4>
+    <p>
+      {{ message }}
+    </p>
+    {% if phone %}
+    <small>{{ name }}'s contact number: {{ phone }}</small>
+    {% else %}
+    <small>No contact number given.</small>
+    {% endif %}
+    {% endif %}
+  </body>
+</html>

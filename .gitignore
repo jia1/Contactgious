@@ -1,0 +1,4 @@
+.openshift/
+__pycache__/
+*.pyc
+*.ini
