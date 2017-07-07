@@ -50,11 +50,11 @@ email_regex = re.compile(r"[^@]+@[^@]+")
 
 validators = {
     'enquiry':  lambda x: x and len(x) == 1 and x.isdigit(),
-    'name':     lambda x: x and 2 <= len(x) <= 32,
-    'email':    lambda x: x and 6 <= len(x) <= 32 and email_regex.match(x),
+    'name':     lambda x: x and 2 <= len(x) <= 30,
+    'email':    lambda x: x and 6 <= len(x) <= 30 and email_regex.match(x),
     'phone':    lambda x: not x or 8 <= len(x) <= 16 and x.isdigit(),
-    'subject':  lambda x: x and 4 <= len(x) <= 32,
-    'message':  lambda x: x and 8 <= len(x) <= 500
+    'subject':  lambda x: x and 10 <= len(x) <= 50,
+    'message':  lambda x: x and 10 <= len(x) <= 500
 }
 
 def emeow(app, data):
@@ -97,7 +97,6 @@ def emeow(app, data):
         return 'emeow: OK'
     else:
         return 'is_valid returns %s: %s' % validated
-    
 
 def is_valid(data):
     if data is None or type(data) is not dict:
