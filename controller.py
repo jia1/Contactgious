@@ -26,5 +26,11 @@ def ping():
     )
     return 'OK'
 
+@app.after_request
+def set_headers(resp):
+  resp.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+  resp.headers['Access-Control-Allow-Origin'] = 'http://localhost:1313'
+  return resp
+
 if __name__ == '__main__':
     app.run(debug = True)
